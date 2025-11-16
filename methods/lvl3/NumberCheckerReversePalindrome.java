@@ -40,8 +40,29 @@ public class NumberCheckerReversePalindrome {
         int[] r = reverseArray(d);
         for (int x : r) System.out.print(x + " ");
         System.out.println();
-        System.out.println(arraysEqual(d, r));
-        System.out.println(isPalindrome(n));
-        System.out.println(isDuck(n));
-    }
+
+#!/bin/bash
+mkdir -p strings/lvl1
+cd strings/lvl1
+git init
+git branch -M main
+
+cat >> CompareStringsCharAtEquals.java << 'EOF'
+import java.util.Scanner;
+public class CompareStringsCharAtEquals{
+ public static boolean compareCharAt(String a,String b){
+  if(a.length()!=b.length())return false;
+  for(int i=0;i<a.length();i++)if(a.charAt(i)!=b.charAt(i))return false;
+  return true;
+ }
+ public static void main(String[] args){
+  Scanner s=new Scanner(System.in);
+  String a=s.next();
+  String b=s.next();
+  boolean ca=compareCharAt(a,b);
+  boolean be=a.equals(b);
+  System.out.println("charAtEqual:"+ca);
+  System.out.println("equals:"+be);
+  System.out.println("same:"+(ca==be));
+ }
 }
